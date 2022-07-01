@@ -4,7 +4,7 @@
 
 Convert msp file to SIRIUS readable format
 
-'''console
-python msp2mgf.py <directory containing msp> <optional: mgf or ms>
+'''
+python msp2mgf.py <directory containing msp> <optional: mgf or ms; default: mgf>
 '''
 
