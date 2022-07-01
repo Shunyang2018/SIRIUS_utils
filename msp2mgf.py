@@ -19,7 +19,7 @@ from function_mgf import *
 if len(sys.argv) <2:
     print('ERROR \n Usage: python msp2mgf.py <directory containing msp> <mgf or ms>')
     raise Exception('Missing input option, stop...')
-elif len(sys.argv)==1:
+elif len(sys.argv)==2:
     sys.argv.append('mgf')
     
     
@@ -29,7 +29,7 @@ print(f'working under {path}...')
     
 for file in os.listdir(path):
     if file.endswith('.msp'):
-        if sys.argv[1] == 'mgf':
+        if sys.argv[2] == 'mgf':
             name, inchikey = wmgf(path, file)
         else:
             name, inchikey = wms(path, file)
