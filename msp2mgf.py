@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Spyder Editor
@@ -13,9 +14,9 @@ from function_mgf import *
 
 
     
-sys.argv = ['./METASCI/']
+# sys.argv = ['./METASCI/']
 
-if len(sys.argv) <1:
+if len(sys.argv) <2:
     print('ERROR \n Usage: python msp2mgf.py <directory containing msp> <mgf or ms>')
     raise Exception('Missing input option, stop...')
 elif len(sys.argv)==1:
@@ -23,8 +24,8 @@ elif len(sys.argv)==1:
     
     
     
-path = sys.argv[0]
-    
+path = sys.argv[1]
+print(f'working under {path}...')   
     
 for file in os.listdir(path):
     if file.endswith('.msp'):
@@ -34,7 +35,7 @@ for file in os.listdir(path):
             name, inchikey = wms(path, file)
         
         csv = path + '/' + file.replace('msp','csv')
-        print(f'writing csv to safe the identifiers...\n for data safety, all identifiers are removeding from mgf files')     
+        print(f'writing csv to save the identifiers...\n for data safety, all identifiers are removed from mgf files')     
         with open(csv,'w') as f:
             f.writelines('Index;Name;InChIKey\n')
             
@@ -43,6 +44,6 @@ for file in os.listdir(path):
                 f.writelines(name[i].strip() + ';')
                 f.writelines(inchikey[i].strip() + '\n')
     
-        break              
+            
                 
 
