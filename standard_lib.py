@@ -14,7 +14,7 @@ from function_mgf import *
 
 
 
-path = '/Users/shunyang.wang/Dropbox (Brightseed)/Mac/Downloads/June/C18_Neg/'
+path = '/Users/shunyang.wang/Dropbox (Brightseed)/Mac/Downloads/June/C18_Pos/'
 
 wf = []
 
@@ -62,8 +62,8 @@ with open(path[:-1]+'.inchi','w') as f:
     f.writelines('  InChIKey\n')
     f.writelines(inchi)
 
-# with open(path[:-1]+'.msp','w') as f:
-#     f.writelines(wf)
+with open(path[:-1]+'.msp','w') as f:
+    f.writelines(wf)
             
-# with open(path[:-1]+'_dup.msp','w') as f:
-#     f.writelines(wf_duplicate)
+with open(path[:-1]+'_dup.msp','w') as f:
+    f.writelines(wf_duplicate)
