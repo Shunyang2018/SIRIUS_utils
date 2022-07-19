@@ -1,5 +1,5 @@
 ## ML model for RT prediction
 
-Test GNN, descriptors
+### Test GNN, descriptors
 
-Test general models for both columns
+### Test general model for both columns
