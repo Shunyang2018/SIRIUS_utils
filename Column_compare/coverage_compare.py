@@ -23,7 +23,7 @@ pfpneg = set(pd.unique(pfpneg))
 pfppos = pd.read_csv('./data/PFP_pos.inchi')['  InChIKey']
 
 pfppos = set(pd.unique(pfppos))
-
+#%%
 
 import matplotlib.pyplot as plt
 from matplotlib_venn import venn2
@@ -45,3 +45,9 @@ plt.show()
 venn2(subsets = (len(c18neg)-neg, len(pfpneg)-neg, neg), set_labels = ('C18', 'PFP'))
 
 plt.show()
+
+#%%
+from venn import venn
+
+dataset_dict = {'c18pos':c18pos,'c18neg':c18neg,'pfppos':pfppos,'pfpneg':pfpneg}
+venn(dataset_dict, fontsize=8, legend_loc="upper left")
